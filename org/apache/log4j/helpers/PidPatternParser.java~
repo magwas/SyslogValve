@@ -1,0 +1,27 @@
+package org.apache.log4j.helpers;
+
+import java.lang.management.ManagementFactory;
+
+public class PidPatternParser extends PatternParser {
+    protected void finalizeConverter(char c) {
+	PatternConverter pc = null;
+	switch(c) {
+	case 'P':
+	    pc = new PidPatternConverter();
+	    currentLiteral.setLength(0);
+	    break;
+	default:
+	    super.finalizeConverter(c);
+	}
+
+	if (pc != null) {
+	    addConverter(pc);
+	}
+    }
+
+    private class PidPatternConverter extends PatternConverter {
+	public String convert(LoggingEvent event) {
+	    return ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
+	}
+    }
+}
