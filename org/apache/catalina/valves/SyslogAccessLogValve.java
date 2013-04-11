@@ -30,16 +30,11 @@ import java.net.UnknownHostException;
 import java.net.SocketException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
-import org.apache.catalina.AccessLog;
-import org.apache.catalina.Lifecycle;
-import org.apache.catalina.LifecycleException;
-import org.apache.catalina.LifecycleListener;
 import org.apache.catalina.connector.Request;
 import org.apache.catalina.connector.Response;
 import org.apache.catalina.util.LifecycleSupport;
-import org.apache.catalina.util.StringManager;
+//import org.apache.catalina.util.StringManager;
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 
@@ -208,16 +203,7 @@ public final class SyslogAccessLogValve extends AccessLogValve {
      */
     protected LifecycleSupport lifecycle = new LifecycleSupport(this);
 
-    /**
-     * The string manager for this package.
-     */
-    private StringManager sm = StringManager.getManager(Constants.Package);
-
-    /**
-     * Has this component been started yet?
-     */
-    private boolean started = false;
-
+ 
 
     // ------------------------------------------------------------- Properties
  
@@ -369,10 +355,16 @@ public final class SyslogAccessLogValve extends AccessLogValve {
      * write the PID - %P
      */
     protected class PidElement implements AccessLogElement {
-        public void addElement(StringBuffer buf, Date date, Request request,
+ /*       public void addElement(StringBuffer buf, Date date, Request request,
 			       Response response, long time) {
             buf.append(getPid());
         }
+*/
+		@Override
+        public void addElement(StringBuilder buf, Date date, Request request,
+			       Response response, long time) {
+         buf.append(getPid());
+     }
     }
 
     // --------------------------------------------------------- Private Methods
