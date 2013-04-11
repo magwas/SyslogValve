@@ -1,0 +1,3 @@
+This is Marco's Syslog Valve for Apache Tomcat, fixed such that it works with tomcat7.
+See http://marcoscorner.walther-family.org/2012/06/apache-tomcat-and-logging-the-2nd/ for more details.
+
