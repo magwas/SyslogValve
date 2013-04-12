@@ -1,0 +1,8 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>SyslogValve</groupId>
+  <artifactId>SyslogValve</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>SyslogValve</name>
+  <description>Syslog Valve for tomcat 7</description>
+</project>
