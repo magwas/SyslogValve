@@ -21,6 +21,7 @@
 package org.apache.catalina.valves;
 
 
+import java.io.CharArrayWriter;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.net.DatagramSocket;
@@ -355,16 +356,12 @@ public final class SyslogAccessLogValve extends AccessLogValve {
      * write the PID - %P
      */
     protected class PidElement implements AccessLogElement {
- /*       public void addElement(StringBuffer buf, Date date, Request request,
-			       Response response, long time) {
-            buf.append(getPid());
-        }
-*/
+ 
 		@Override
-        public void addElement(StringBuilder buf, Date date, Request request,
-			       Response response, long time) {
-         buf.append(getPid());
-     }
+		public void addElement(CharArrayWriter writer, Date arg1, Request arg2,
+				Response arg3, long arg4) {
+	         writer.append(getPid());
+		}
     }
 
     // --------------------------------------------------------- Private Methods

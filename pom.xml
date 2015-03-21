@@ -5,4 +5,32 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>SyslogValve</name>
   <description>Syslog Valve for tomcat 7</description>
+
+
+  <dependencies>
+    <dependency>
+    	<groupId>org.apache.tomcat</groupId>
+    	<artifactId>tomcat-catalina</artifactId>
+    	<version>8.0.20</version>
+    </dependency>
+    <dependency>
+    	<groupId>log4j</groupId>
+    	<artifactId>log4j</artifactId>
+    	<version>1.2.17</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.2</version>
+        <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+        </configuration>
+        </plugin>
+    </plugins>
+  </build>
 </project>
